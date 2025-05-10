@@ -77,7 +77,7 @@ function SelectLabel({ className, ...props }) {
   );
 }
 
-export function SelectItem({ className, children, ...props }) {
+function SelectItem({ className, children, ...props }) {
   return (
     <SelectPrimitive.Item
       className={cn(

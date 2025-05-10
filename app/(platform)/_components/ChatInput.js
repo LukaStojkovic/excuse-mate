@@ -30,7 +30,7 @@ export default function ChatInput() {
   useEffect(() => {
     setConversationId(null);
     setMessages([]);
-  }, []);
+  }, [setConversationId, setMessages]);
 
   async function handleSubmit(e) {
     try {
