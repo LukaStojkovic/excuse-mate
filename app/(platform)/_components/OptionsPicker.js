@@ -7,16 +7,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
+import { TooltipProvider } from "@/components/ui/tooltip";
 import React from "react";
 import { useChatContext } from "../contexts/ChatContext";
-import { Zap } from "lucide-react";
+import { ProSelectItem } from "./ProSelectItem";
 
 export default function OptionsPicker({ isPro = false }) {
   const { tone, setTone, category, setCategory } = useChatContext();
@@ -26,112 +20,61 @@ export default function OptionsPicker({ isPro = false }) {
       <TooltipProvider>
         <div>
           <label className="block text-sm mb-1 font-medium">Tone</label>
-          <Select onValueChange={(tone) => setTone(tone)} value={tone}>
+          <Select onValueChange={setTone} value={tone}>
             <SelectTrigger>
               <SelectValue placeholder="Select tone" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="funny">Funny</SelectItem>
-
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="serious">
-                      Serious {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="sarcastic">
-                      Sarcastic {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="professional">
-                      Professional {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
+              <ProSelectItem isPro={isPro} value="serious">
+                Serious
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="sarcastic">
+                Sarcastic
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="professional">
+                Professional
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="angry">
+                Angry
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="romantic">
+                Romantic
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="overdramatic">
+                Overdramatic
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="inspirational">
+                Inspirational
+              </ProSelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div>
           <label className="block text-sm mb-1 font-medium">Category</label>
-          <Select
-            onValueChange={(category) => setCategory(category)}
-            value={category}
-          >
+          <Select onValueChange={setCategory} value={category}>
             <SelectTrigger>
               <SelectValue placeholder="Select category" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="event">Missed Event</SelectItem>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="work">
-                      Work {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="school">
-                      School {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="relationship">
-                      Relationship {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div>
-                    <SelectItem disabled={!isPro} value="other">
-                      Other {!isPro && <Zap />}
-                    </SelectItem>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upgrade to pro plan to use this feature.</p>
-                </TooltipContent>
-              </Tooltip>
+              <ProSelectItem isPro={isPro} value="work">
+                Work
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="school">
+                School
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="relationship">
+                Relationship
+              </ProSelectItem>
+
+              <ProSelectItem isPro={isPro} value="personal issues">
+                Personal Issues
+              </ProSelectItem>
+              <ProSelectItem isPro={isPro} value="family">
+                Family
+              </ProSelectItem>
             </SelectContent>
           </Select>
         </div>

@@ -10,14 +10,27 @@ import { saveMessage } from "@/app/libs/message";
 import { useQueryClient } from "@tanstack/react-query";
 import { useProModal } from "../hooks/useProModal";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function ChatInput() {
   const queryClient = useQueryClient();
-  const { tone, category, input, setInput, setMessages, conversationId } =
-    useChatContext();
+  const {
+    tone,
+    category,
+    input,
+    setInput,
+    setMessages,
+    conversationId,
+    setConversationId,
+  } = useChatContext();
   const proModal = useProModal();
   const createConversation = useCreateConversation();
   const router = useRouter();
+
+  useEffect(() => {
+    setConversationId(null);
+    setMessages([]);
+  }, []);
 
   async function handleSubmit(e) {
     try {

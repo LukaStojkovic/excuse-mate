@@ -22,7 +22,7 @@ export function ThemeButton() {
       variant="secondary"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="w-full cursor-pointer dark:bg-[#2C2C2C]"
+      className="w-full cursor-pointer shadow-sm dark:bg-[#2C2C2C]"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5" />

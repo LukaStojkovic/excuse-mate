@@ -16,7 +16,6 @@ export function useCreateConversation() {
           category,
         });
 
-        console.log("Conversation created:", data);
         setConversationId(data.id);
         router.push(`/chat/${data.id}`);
         return data.id;

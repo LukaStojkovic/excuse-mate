@@ -93,6 +93,7 @@ export default function ProModal() {
               onSubscribe();
               proModal.onClose();
             }}
+            variant="premium"
           >
             Upgrade
             <Zap className="w-4 h-4 ml-2 " />

@@ -23,7 +23,7 @@ export default function SubscriptionButton({ isPro = false }) {
 
   return (
     <Button
-      variant={!isPro ? "premium" : ""}
+      variant={!isPro ? "premium" : "default"}
       disabled={loading}
       onClick={handleClick}
     >

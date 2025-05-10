@@ -9,6 +9,7 @@ import { useUser } from "@clerk/nextjs";
 import { Bot } from "lucide-react";
 import Loading from "@/app/loading";
 import Spinner from "./Spinner";
+import Image from "next/image";
 
 export default function ChatArea() {
   const { setMessages } = useChatContext();

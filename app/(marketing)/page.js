@@ -51,6 +51,7 @@ export default function MarketingPage() {
       <Button className="mt-6" size="lg" asChild>
         <Link href="/sign-up">Get Excuse Mate for free</Link>
       </Button>
+      <p className="text-xs mt-2 text-neutral-400">No credit card required.</p>
     </div>
   );
 }

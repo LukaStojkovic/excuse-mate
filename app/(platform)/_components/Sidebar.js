@@ -92,7 +92,7 @@ export function Sidebar({ apiLimitCount = 0, isPro = false }) {
       )}
       <div className="flex flex-col justify-between mt-auto p-4 border-t bg-muted space-y-4">
         {!isPro && (
-          <div className="bg-primary dark:bg-gradient-to-r dark:from-indigo-500 dark:to-cyan-500 text-white rounded-lg p-2 text-center cursor-pointer">
+          <div className="bg-primary bg-gradient-to-r from-cyan-300 via-sky-400 to-purple-500   text-white rounded-lg p-2 text-center cursor-pointer">
             {isOpen ? (
               <button
                 onClick={proModal.onOpen}

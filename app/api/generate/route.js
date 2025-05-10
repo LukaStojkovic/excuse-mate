@@ -18,10 +18,16 @@ export async function POST(req) {
     }
 
     const result = await model.generateContent([
-      `You are a helpful excuse assistant. Generate an excuse in ${tone} way in ${category} category. 
-       The excuse should be short and to the point. 
-       The user will provide the reason why he want to make excuse.
-       Reason: ${prompt}`,
+      `You are a creative and witty excuse generator. Your task is to create an excuse based on the user's reason. 
+   The excuse should be in the tone of "${tone}" and fall under the "${category}" category.
+   The excuse must be:
+   - Short, clear, and to the point.
+   - Funny, absurd, or dramatic based on the selected tone.
+   - Original, engaging, and creative.
+   - Ensure it fits the category (e.g., for "Missed Event", it should explain why the event wasn't attended, and for "Work", why work wasn't completed or attended).
+   
+   The user will provide the reason for the excuse, and you should craft it accordingly.
+   Reason: "${prompt}"`,
     ]);
 
     const text = result.response.text();
