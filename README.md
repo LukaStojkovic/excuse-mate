@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Excuse Mate 🙈
 
-## Getting Started
+**Excuse Mate** is your ultimate AI-powered assistant for generating creative, humorous, or believable excuses. Whether you're late to a meeting, forgot to reply, or just need a clever reason — Excuse Mate has your back.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🎭 Multiple tone options: funny, serious, passive-aggressive, and more
+- 🗂️ Categories for all situations: work, school, relationships, etc.
+- ✨ AI-generated excuses tailored to your message
+- 🏆 Premium plan with advanced excuse crafting
+- 🌙 Clean UI with dark mode support
+
+---
+
+## 💻 Tech Stack
+
+- **Frontend:** React, Next.js, Tailwind CSS, shadcn/ui
+- **Backend:** Next.js API Routes, Prisma, MongoDB, Clerk
+- **AI:** Gemini API
+- **Payments:** Stripe integration for subscriptions
+
+---
+
+## 🧪 Test Subscription
+
+To test the **Pro plan subscription**, use the following test credit card in the Stripe checkout:
+
+4242 4242 4242 4242
+MM/YY: Any future date
+CVC: Any 3 digits
+ZIP: Any 5 digits
+
+> ⚠️ This card is for **test mode only** and **won’t charge real money**.
+
+---
+
+## 📦 Installation
 
 ```bash
+git clone https://github.com/LukaStojkovic/excuse-mate.git
+cd excuse-mate
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables Example
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+DATABASE_URL=your_mongo_connection_string
+OPENAI_API_KEY=your_openai_key
+NEXTAUTH_SECRET=your_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLIC_KEY=your_stripe_public_key
