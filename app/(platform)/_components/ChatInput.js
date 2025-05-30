@@ -10,7 +10,7 @@ import { saveMessage } from "@/app/libs/message";
 import { useQueryClient } from "@tanstack/react-query";
 import { useProModal } from "../hooks/useProModal";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ChatInput() {
   const queryClient = useQueryClient();
@@ -26,6 +26,7 @@ export default function ChatInput() {
   const proModal = useProModal();
   const createConversation = useCreateConversation();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setConversationId(null);
@@ -35,6 +36,7 @@ export default function ChatInput() {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
+      setIsLoading(true);
       if (input.trim() === "" || !tone || !category) return;
 
       const response = await generateExcuse(input, tone, category);
@@ -66,6 +68,7 @@ export default function ChatInput() {
       }
     } finally {
       router.refresh();
+      setIsLoading(false);
     }
   }
 
@@ -85,10 +88,10 @@ export default function ChatInput() {
           type="submit"
           size="sm"
           className="rounded-full px-4 py-2 text-sm flex items-center gap-1 bg-cyan-500 hover:bg-cyan-600 cursor-pointer"
-          disabled={!input || !tone || !category}
+          disabled={!input || !tone || !category || isLoading}
         >
           <Sparkles className="w-4 h-4" />
-          Generate
+          {isLoading ? "Generating..." : "Generate"}
         </Button>
       </form>
       <p className="text-xs text-muted-foreground mt-4">
